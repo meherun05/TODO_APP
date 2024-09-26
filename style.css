@@ -1,0 +1,80 @@
+body {
+  font-family: sans-serif;
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+}
+.app {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 330px;
+  height: 600px;
+  border-radius: 10px;
+  padding: 15px;
+  margin: auto;
+  margin: 15px auto;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  overflow-y: scroll;
+}
+.app::-webkit-scrollbar {
+  width: 0 !important;
+} /*Chrome */
+.app {
+  overflow: -moz-scrollbars-none;
+} /*Firefox */
+.app {
+  -ms-overflow-style: none;
+} /*Internet Explorer +10 */
+
+#newTask {
+  margin: 10px 0px;
+  background-color: #beebb2;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.tasks {
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#tasks {
+  display: grid;
+  gap: 14px;
+}
+
+#tasks div {
+  background-color: #e2eede;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 10px;
+  padding: 15px;
+  display: grid;
+  gap: 4px;
+}
+
+.content h4 {
+  color: rgb(6, 61, 6);
+}
+.actions {
+  justify-self: center;
+  display: flex;
+  gap: 20px;
+}
+.actions i {
+  cursor: pointer;
+}
+
+.modal-body div {
+  padding: 5px 0;
+}
+.modal-body div input {
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.modal-body div textarea {
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
