@@ -28,10 +28,11 @@ let acceptData = () => {
   data["date"] = date.value;
   data["desc"] = desc.value;
   createTasks();
-  (() => {
-    add.setAttribute("data-bs-dismiss", "modal");
-  })();
+  add.setAttribute("data-bs-dismiss", "modal");
   add.click();
+  (() => {
+    add.setAttribute("data-bs-dismiss", "");
+  })();
   resetForm();
 };
 
@@ -43,7 +44,7 @@ let createTasks = () => {
   <p>${data.desc}</p>
   <span class="actions">
       <i class="fa-solid fa-pen-to-square" style="color: rgb(42, 106, 245);"></i>
-      <i class="fa-solid fa-trash" style="color: tomato;"></i>
+      <i onClick ="deleteTask(this)" class="fa-solid fa-trash" style="color: tomato;"></i>
   </span>
 </div>
   `;
@@ -53,4 +54,8 @@ let resetForm = () => {
   taskName.value = "";
   data.value = "";
   desc.value = "";
+};
+
+let deleteTask = (e) => {
+  e.parentElement.parentElement.remove();
 };
