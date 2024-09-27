@@ -43,7 +43,7 @@ let createTasks = () => {
   <span class="small text-secendory">${data.date}</span>
   <p>${data.desc}</p>
   <span class="actions">
-      <i class="fa-solid fa-pen-to-square" style="color: rgb(42, 106, 245);"></i>
+      <i onClick = "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fa-solid fa-pen-to-square" style="color: rgb(42, 106, 245);"></i>
       <i onClick ="deleteTask(this)" class="fa-solid fa-trash" style="color: tomato;"></i>
   </span>
 </div>
@@ -52,8 +52,21 @@ let createTasks = () => {
 
 let resetForm = () => {
   taskName.value = "";
-  data.value = "";
+  date.value = "";
   desc.value = "";
+};
+
+let editTask = (e) => {
+  let selectedElement = e.parentElement.parentElement;
+  taskName.value = selectedElement.children[0].innerHTML;
+  let dateString = selectedElement.children[1].innerHTML;
+  let dateObj = new Date(dateString);
+  let formattedDate = `${dateObj.getFullYear()}-${String(
+    dateObj.getMonth() + 1
+  ).padStart(2, "0")}-${String(dateObj.getDate()).padStart(2, "0")}`;
+  date.value = formattedDate;
+  desc.value = selectedElement.children[2].innerHTML;
+  deleteTask(e);
 };
 
 let deleteTask = (e) => {
